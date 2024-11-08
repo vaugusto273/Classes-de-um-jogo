@@ -3,12 +3,12 @@
 
 **O Que deve ser utilizado**
 
-- Variáveis
-- Operadores
+- ✅ Variáveis
+- ✅ Operadores
 - Laços de repetição
-- Estruturas de decisões
-- Funções
-- Classes e Objetos
+- ✅ Estruturas de decisões
+- ✅ Funções
+- ✅ Classes e Objetos
 
 ## Objetivo:
 
@@ -37,3 +37,51 @@ Ao final deve se exibir uma mensagem:
 ex: mago atacou usando magia
 guerreiro atacou usando espada
 */
+class Hero{
+    constructor(herostats){
+        this.name = herostats.name;
+        this.age = herostats.age;
+        this.type = herostats.type;
+    }
+    Atacar(){
+        switch (this.type){
+            case "guerreiro":
+                console.log(`o ${this.type} atacou usando ${attacktype(this.type)}`)
+                break
+            case "mago":
+                console.log(`o ${this.type} atacou usando ${attacktype(this.type)}`)
+                break
+            case "monge":
+                console.log(`o ${this.type} atacou usando ${attacktype(this.type)}`)
+                break
+            case "ninja":
+                console.log(`o ${this.type} atacou usando ${attacktype(this.type)}`)
+                break
+            default:
+                console.log("Error: Unknown hero class, insert another")
+        }
+    }
+}
+function attacktype(type){
+    switch (type){
+        case "guerreiro":
+            return Attacktype = "espada"
+        case "mago":
+            return Attacktype = "magia"
+        case "monge":
+            return Attacktype = "artes marciais"
+        case "ninja":
+            return Attacktype = "shuriken"
+        default:
+            return Attacktype = "error"
+    }
+}
+
+let herostats = {
+    name: "Vaugusto",
+    age: 21,
+    type: "mago"
+}
+let myhero = new Hero(herostats);
+myhero.Atacar();
+
