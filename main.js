@@ -5,7 +5,7 @@
 
 - ✅ Variáveis
 - ✅ Operadores
-- Laços de repetição
+- ✅ Laços de repetição
 - ✅ Estruturas de decisões
 - ✅ Funções
 - ✅ Classes e Objetos
@@ -38,10 +38,10 @@ ex: mago atacou usando magia
 guerreiro atacou usando espada
 */
 class Hero{
-    constructor(herostats){
-        this.name = herostats.name;
-        this.age = herostats.age;
-        this.type = herostats.type;
+    constructor(heroes){
+        this.name = heroes.name;
+        this.age = heroes.age;
+        this.type = heroes.type;
     }
     Atacar(){
         switch (this.type){
@@ -78,10 +78,12 @@ function attacktype(type){
 }
 
 let herostats = {
-    name: "Vaugusto",
-    age: 21,
-    type: "mago"
-}
-let myhero = new Hero(herostats);
-myhero.Atacar();
+    "heros": [
+        {"name": "Liban Hurrman","age": 21,"type": "monge"},
+        {"name": "Zurik", "age": 999, "type":"mago"},
+        {"name": "Zumyra", "age": 52, "type":"guerreiro"},
+        {"name": "Wells", "age": 19, "type":"ninja"}
+]}
+let heroes = herostats.heros.map(heroData => new Hero(heroData));
 
+heroes.forEach(hero => hero.Atacar());
